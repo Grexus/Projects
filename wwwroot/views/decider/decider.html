@@ -1,0 +1,17 @@
+<template>
+    <span>${projectName}</span>
+
+    <div class="user-input">
+        <input class="new-item-input" type="text" value.bind="option">
+        <button class="add-input" disabled.bind="!option" click.delegate="addOption()">add</button>
+        <button class="make-decision" disabled.bind="options.length == 0" click.delegate="decide()">decide</button>
+    </div>
+
+    <div class="options">
+        <span class="option" repeat.for="option of options" click.delegate="removeOption($index)">${option}</span>
+    </div>
+
+    <div class="decision" if.bind="isDecided">
+        <span class="decision">${decision}</span>
+    </div>
+</template>

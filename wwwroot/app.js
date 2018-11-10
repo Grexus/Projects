@@ -11,6 +11,7 @@ class App {
         config.map([
             { route: [''], name: 'home', title: "Home", moduleId: 'views/home/home' },
             { route: ['todo-list'], name: 'todo-list', title: "To-Do List", moduleId: 'views/todo-list/todo-list' },
+            { route: ['decider'], name: 'decider', title: "D-Cider", moduleId: 'views/decider/decider' },
         ]);
     }
 }
