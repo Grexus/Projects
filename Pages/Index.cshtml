@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Home";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Admin Portal</title>
+    <base href="/">
+    <link rel="stylesheet" href="~/styles/core.css" asp-append-version="true" />
+</head>
+
+<body class="body">
+
+    <!--Aurelia Scripts-->
+    <script src="jspm_packages/system.js" asp-append-version="true"></script>
+    <script src="config.js" asp-append-version="true"></script>
+    <script>
+          SystemJS.import('aurelia-bootstrapper').then(bootstrapper => {
+            bootstrapper.bootstrap(function(aurelia) {
+              aurelia.use
+                .standardConfiguration()
+                .developmentLogging();
+
+              aurelia.start().then(() => aurelia.setRoot('app', document.body));
+            });
+          });
+    </script>
+</body>
+</html>
