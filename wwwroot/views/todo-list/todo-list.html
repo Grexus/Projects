@@ -1,4 +1,7 @@
 <template>
+
+  <span>${projectName}</span>
+
     <div class="user-input">
         <input type="text" value.bind="userInput">
         <button click.trigger="addToList()" disabled.bind="!userInput">add</button>
@@ -6,9 +9,11 @@
 
       <div class="list">
         <div class="list-item ${toDo.isDone ? 'done' : ''}" repeat.for="toDo of toDos">
-          <span class="list-item-description">${$index} - ${toDo.description}</span>
+          <span class="list-item-description" if.bind="!toDo.isEditing">${toDo.description}</span>
+          <input class="edit-list-item-description" if.bind="toDo.isEditing" value.bind="toDo.description">
+
           <button click.trigger="toggleDone($index)">${toDo.isDone ? 'mark as to do' : 'mark as done'}</button>
-          <button click.trigger="editToDo($index)">edit</button>
+          <button click.trigger="toggleEditing($index)">${toDo.isEditing ? 'save' : 'edit'}</button>
           <button click.trigger="remove($index)">remove</button>
         </div>
       </div>

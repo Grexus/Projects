@@ -1,17 +1,15 @@
 import { ToDoModel } from "../../models/to-do-model";
 
-export class Home {
+export class TodoList {
 
-  appName: string;
+  projectName: string;
   userInput: string;
   toDos: ToDoModel[] = [];
-  aa: number;
 
   constructor() {
-    this.appName = 'To-Do List';
+    this.projectName = 'To-Do List';
     this.userInput = '';
     this.toDos = [];
-    this.aa = 2;
   }
 
   addToList() {
@@ -19,14 +17,13 @@ export class Home {
 
     newToDo.description = this.userInput;
     newToDo.isDone = false;
+    newToDo.isEditing = false;
     this.toDos.push(newToDo);
     this.userInput = '';
   }
 
-
-  // Finish Edit Function ! ! !
-  editToDo(i) {
-    this.toDos[i].description = 'edited';
+  toggleEditing(i){
+    this.toDos[i].isEditing = !this.toDos[i].isEditing;
   }
 
   toggleDone(i) {
