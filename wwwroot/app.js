@@ -9,8 +9,8 @@ class App {
         config.options.hashChange = true;
         config.options.root = '';
         config.map([
-            { route: [''], name: 'home', title: "Tes", moduleId: 'views/home/home' },
-            { route: ['home2'], name: 'home2', title: "JHDSA", moduleId: 'views/home/home2' },
+            { route: [''], name: 'home', title: "Home", moduleId: 'views/home/home' },
+            { route: ['todo-list'], name: 'todo-list', title: "To-Do List", moduleId: 'views/todo-list/todo-list' },
         ]);
     }
 }
