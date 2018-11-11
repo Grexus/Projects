@@ -1,0 +1,17 @@
+<template>
+    <span>${projectName}</span>
+
+    <div class="information row flex-between">
+        <div class="player column" repeat.for="player of players">
+            <div class="row flex-middle">
+                <span class="player-name">${player.playerName}</span>
+                <button class="edit" click.delegate="editPlayerName($index)">edit</button>
+            </div>
+            <span class="player-score">${player.playerScore}</span>
+        </div>
+    </div>
+
+    <div class="grid row">
+        <div class="grid-item"></div>
+    </div>
+</template>
