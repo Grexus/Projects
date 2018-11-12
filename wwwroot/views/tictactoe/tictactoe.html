@@ -4,15 +4,15 @@
     <div class="information row flex-between">
         <div class="player column ${player.isActive ? 'active' : '' }" repeat.for="player of players">
             <div class="row flex-middle">
-                <span class="player-name" if.bind="!player.editPlayerName" value.bind="playerName">${player.playerName}</span>
-                <input type="text" class="edit-player-name" if.bind="player.editPlayerName" value.bind="playerName">
-                <button class="edit" click.trigger="editPlayerName($index)">${player.editPlayerName ? 'save' : 'edit'}</button>
+                <span class="player-name" if.bind="!player.editPlayerName" value.bind="player.playerName">${player.playerName}</span>
+                <input type="text" class="edit-player-name" if.bind="player.editPlayerName" value.bind="player.playerName">
+                <button class="edit" click.trigger="toggleEditPlayerName($index)">${player.editPlayerName ? 'save' : 'edit'}</button>
             </div>
             <span class="player-score">${player.playerScore}</span>
         </div>
     </div>
 
     <div class="grid row">
-        <div class="grid-item col-4" repeat.for="space of grid" click.trigger="mark($index)">Click to Mark</div>
+        <div class="grid-item col-4" repeat.for="space of grid" click.trigger="markSpace($index)">${space.playerMarked >= 0 ? space.playerMarked : 'Click Me'}</div>
     </div>
 </template>

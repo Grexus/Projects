@@ -24,52 +24,32 @@ export class TicTacToe{
             }
         ]
         this.grid = [
-            {
-                isMarked: false,
-                playerMarked: null
-            },
-            {
-                isMarked: false,
-                playerMarked: null
-            },
-            {
-                isMarked: false,
-                playerMarked: null
-            },
-            {
-                isMarked: false,
-                playerMarked: null
-            },
-            {
-                isMarked: false,
-                playerMarked: null
-            },
-            {
-                isMarked: false,
-                playerMarked: null
-            },
-            {
-                isMarked: false,
-                playerMarked: null
-            },
-            {
-                isMarked: false,
-                playerMarked: null
-            },
-            {
-                isMarked: false,
-                playerMarked: null
-            }
+            { playerMarked: -1 },
+            { playerMarked: -1 },
+            { playerMarked: -1 },
+            { playerMarked: -1 },
+            { playerMarked: -1 },
+            { playerMarked: -1 },
+            { playerMarked: -1 },
+            { playerMarked: -1 },
+            { playerMarked: -1 }
         ]
     }
 
-    // Bugged
     toggleEditPlayerName(i){
         this.players[i].editPlayerName = !this.players[i].editPlayerName;
     }
 
     markSpace(i){
-        this.grid[i].isMarked = true;
+        if(this.grid[i].playerMarked < 0){
+            if(this.players[0].isActive){
+                this.grid[i].playerMarked = 0;
+            } else if (this.players[1].isActive) {
+                this.grid[i].playerMarked = 1;
+            }
+
+            this.toggleActivePlayer();
+        }
     }
 
     toggleActivePlayer(){
