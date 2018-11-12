@@ -2,16 +2,17 @@
     <span>${projectName}</span>
 
     <div class="information row flex-between">
-        <div class="player column" repeat.for="player of players">
+        <div class="player column ${player.isActive ? 'active' : '' }" repeat.for="player of players">
             <div class="row flex-middle">
-                <span class="player-name">${player.playerName}</span>
-                <button class="edit" click.delegate="editPlayerName($index)">edit</button>
+                <span class="player-name" if.bind="!player.editPlayerName" value.bind="playerName">${player.playerName}</span>
+                <input type="text" class="edit-player-name" if.bind="player.editPlayerName" value.bind="playerName">
+                <button class="edit" click.trigger="editPlayerName($index)">${player.editPlayerName ? 'save' : 'edit'}</button>
             </div>
             <span class="player-score">${player.playerScore}</span>
         </div>
     </div>
 
     <div class="grid row">
-        <div class="grid-item"></div>
+        <div class="grid-item col-4" repeat.for="space of grid" click.trigger="mark($index)">Click to Mark</div>
     </div>
 </template>
