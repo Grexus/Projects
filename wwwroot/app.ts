@@ -12,9 +12,9 @@ export class App {
     config.options.root = '';
     config.map([
       { route: [''], name: 'home', title: "Home", moduleId: 'views/home/home' },
-      { route: ['toDo-list'], name: 'toDo-list', title: "To-Do List", moduleId: 'views/todo-list/todo-list' },
-      { route: ['decider'], name: 'decider', title: "D-Cider", moduleId: 'views/decider/decider' },
       { route: ['ticTacToe'], name: 'TicTacToe', title: "Tic Tac Toe", moduleId: 'views/ticTacToe/ticTacToe' },
+      { route: ['decider'], name: 'decider', title: "D-Cider", moduleId: 'views/decider/decider' },
+      { route: ['toDo-list'], name: 'toDo-list', title: "To-Do List", moduleId: 'views/todo-list/todo-list' },
     ]);
   }
 }

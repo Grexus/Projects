@@ -1,0 +1,17 @@
+.app { height: 100%;
+
+    // Header
+    .header { background-color: blueviolet; height: 60px; padding: 0 10px;
+
+        // User Details
+        .user-details { text-align: right; }
+    }
+
+    // Sidebar
+    .sidebar { background-color: grey; padding: 10px;
+
+    }
+
+    // Footer
+    .footer {}
+}

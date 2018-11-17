@@ -341,6 +341,19 @@ template {
   display: none;
 }
 
+.body {
+  height: 100vh;
+}
+
+.col {
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 100%;
+}
+
 .col-1 {
   -ms-flex-preferred-size: calc(100% / 12 * 1);
       flex-basis: calc(100% / 12 * 1);
@@ -425,9 +438,6 @@ template {
       flex-wrap: wrap;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
 }
 
 .column {
@@ -442,9 +452,6 @@ template {
       flex-wrap: wrap;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
 }
 
 .flex-grow {
@@ -503,5 +510,24 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.app {
+  height: 100%;
+}
+
+.app .header {
+  background-color: blueviolet;
+  height: 60px;
+  padding: 0 10px;
+}
+
+.app .header .user-details {
+  text-align: right;
+}
+
+.app .sidebar {
+  background-color: grey;
+  padding: 10px;
 }
 /*# sourceMappingURL=core.css.map */
