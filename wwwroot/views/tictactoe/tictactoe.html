@@ -1,3 +1,24 @@
 <template>
     <span>${projectName}</span>
+
+    <div class="row flex-between">
+        <div class="player-1 ${activePlayer == 1 ? 'active' : ''}">
+            <span contenteditable="true" textcontent.two-way="player1.playerName"></span>
+            <span>${player1.playerScore}</span>
+        </div>
+        <div class="player-2 ${activePlayer == 2 ? 'active' : ''}">
+            <span contenteditable="true" textcontent.two-way="player2.playerName"></span>
+            <span>${player2.playerScore}</span>
+        </div>
+    </div>
+
+    <div class="grid column">
+        <div class="grid-row row flex-center flex-middle" repeat.for="row of ticTacToeGrid">
+            <div class="cell col-4" repeat.for="cell of row" click.delegate="markCell($parent.$index, $index)">
+                <i class="material-icons" if.bind="ticTacToeGrid[$parent.$index][$index] == 0">Click Me</i>
+                <i class="material-icons" if.bind="ticTacToeGrid[$parent.$index][$index] == 1">X</i>
+                <i class="material-icons" if.bind="ticTacToeGrid[$parent.$index][$index] == 2">O</i>
+            </div>
+        </div>
+    </div>
 </template>

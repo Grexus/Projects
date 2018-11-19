@@ -1,4 +1,4 @@
-import { ToDoModel } from "../../models/to-do-model";
+import { ToDoModel } from "../../models/todo-model";
 
 export class TodoList {
 
