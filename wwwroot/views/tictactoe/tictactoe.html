@@ -15,9 +15,9 @@
     <div class="grid column">
         <div class="grid-row row flex-center flex-middle" repeat.for="row of ticTacToeGrid">
             <div class="cell col-4" repeat.for="cell of row" click.delegate="markCell($parent.$index, $index)">
-                <i class="empty material-icons" if.bind="ticTacToeGrid[$parent.$index][$index] == 0">Click Me</i>
-                <i class="marked-x material-icons" if.bind="ticTacToeGrid[$parent.$index][$index] == 1">X</i>
-                <i class="marked-o material-icons" if.bind="ticTacToeGrid[$parent.$index][$index] == 2">O</i>
+                <div if.bind="ticTacToeGrid[$parent.$index][$index].cellValue === 0">Click Here</div>
+                <div class="marked-x" if.bind="ticTacToeGrid[$parent.$index][$index].cellValue === 1">X</div>
+                <div class="marked-o" if.bind="ticTacToeGrid[$parent.$index][$index].cellValue === 2">O</div>
             </div>
         </div>
     </div>

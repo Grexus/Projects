@@ -5,9 +5,9 @@ class TicTacToe {
         this.projectName = 'TicTacToe';
         this.activePlayer = 1;
         this.ticTacToeGrid = [
-            [0, 0, 0],
-            [0, 0, 0],
-            [0, 0, 0]
+            [{ cellValue: 0 }, { cellValue: 0 }, { cellValue: 0 }],
+            [{ cellValue: 0 }, { cellValue: 0 }, { cellValue: 0 }],
+            [{ cellValue: 0 }, { cellValue: 0 }, { cellValue: 0 }]
         ];
         this.player1 = {
             playerName: 'Player 1',
@@ -22,31 +22,28 @@ class TicTacToe {
         this.gameActive = true;
     }
     markCell(row, cell) {
-        if (this.ticTacToeGrid[row][cell] == 0) {
-            this.ticTacToeGrid[row][cell] = this.activePlayer;
+        if (this.ticTacToeGrid[row][cell].cellValue == 0) {
+            this.ticTacToeGrid[row][cell].cellValue = this.activePlayer;
             this.checkWinner();
             this.toggleActivePlayer();
         }
     }
     checkWinner() {
-        if (this.ticTacToeGrid[0][0] && this.ticTacToeGrid[0][1] && this.ticTacToeGrid[0][2] ||
-            this.ticTacToeGrid[1][0] && this.ticTacToeGrid[1][1] && this.ticTacToeGrid[1][2] ||
-            this.ticTacToeGrid[2][0] && this.ticTacToeGrid[2][1] && this.ticTacToeGrid[2][2]) {
+        if (this.ticTacToeGrid[0][0].cellValue && this.ticTacToeGrid[0][1].cellValue && this.ticTacToeGrid[0][2].cellValue ||
+            this.ticTacToeGrid[1][0].cellValue && this.ticTacToeGrid[1][1].cellValue && this.ticTacToeGrid[1][2].cellValue ||
+            this.ticTacToeGrid[2][0].cellValue && this.ticTacToeGrid[2][1].cellValue && this.ticTacToeGrid[2][2].cellValue) {
             this.gameActive = false;
-            alert("Winner");
             this.setWinner();
         }
-        else if (this.ticTacToeGrid[0][0] && this.ticTacToeGrid[1][0] && this.ticTacToeGrid[2][0] ||
-            this.ticTacToeGrid[0][1] && this.ticTacToeGrid[1][1] && this.ticTacToeGrid[2][1] ||
-            this.ticTacToeGrid[0][2] && this.ticTacToeGrid[1][2] && this.ticTacToeGrid[2][2]) {
+        else if (this.ticTacToeGrid[0][0].cellValue && this.ticTacToeGrid[1][0].cellValue && this.ticTacToeGrid[2][0].cellValue ||
+            this.ticTacToeGrid[0][1].cellValue && this.ticTacToeGrid[1][1].cellValue && this.ticTacToeGrid[2][1].cellValue ||
+            this.ticTacToeGrid[0][2].cellValue && this.ticTacToeGrid[1][2].cellValue && this.ticTacToeGrid[2][2].cellValue) {
             this.gameActive = false;
-            alert("Winner");
             this.setWinner();
         }
-        else if (this.ticTacToeGrid[0][0] && this.ticTacToeGrid[1][1] && this.ticTacToeGrid[2][2] ||
-            this.ticTacToeGrid[2][0] && this.ticTacToeGrid[1][1] && this.ticTacToeGrid[0][2]) {
+        else if (this.ticTacToeGrid[0][0].cellValue && this.ticTacToeGrid[1][1].cellValue && this.ticTacToeGrid[2][2].cellValue ||
+            this.ticTacToeGrid[2][0].cellValue && this.ticTacToeGrid[1][1].cellValue && this.ticTacToeGrid[0][2].cellValue) {
             this.gameActive = false;
-            alert("Winner");
             this.setWinner();
         }
     }
