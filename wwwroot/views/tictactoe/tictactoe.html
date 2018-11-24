@@ -5,10 +5,12 @@
         <div class="player-1 ${activePlayer == 1 ? 'active' : ''} ${player1.isWinner ? 'winner' : ''}">
             <span contenteditable="true" textcontent.two-way="player1.playerName"></span>
             <span>${player1.playerScore}</span>
+            <span if.bind="player1.isWinner">Winner</span>
         </div>
         <div class="player-2 ${activePlayer == 2 ? 'active' : ''} ${player2.isWinner ? 'winner' : ''}">
             <span contenteditable="true" textcontent.two-way="player2.playerName"></span>
             <span>${player2.playerScore}</span>
+            <span if.bind="player2.isWinner">Winner</span>
         </div>
     </div>
 
