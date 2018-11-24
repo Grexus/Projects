@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class App {
+    constructor() {
+        this.showSidebar = false;
+    }
     configureRouter(config, router) {
         this.router = router;
         this.router.navigateToRoute;
@@ -14,6 +17,9 @@ class App {
             { route: ['decider'], name: 'decider', title: "D-Cider", moduleId: 'views/decider/decider' },
             { route: ['toDo-list'], name: 'toDo-list', title: "To-Do List", moduleId: 'views/todo-list/todo-list' },
         ]);
+    }
+    toggleSidebar() {
+        this.showSidebar = !this.showSidebar;
     }
 }
 exports.App = App;

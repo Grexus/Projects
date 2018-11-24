@@ -8,8 +8,18 @@
     }
 
     // Sidebar
-    .sidebar { background-color: grey; padding: 10px;
+    .sidebar { background-color: grey; padding: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 200px; 
+        transition: margin-left 0.2s ease-in-out;
+    
+        // When Shown
+        &.show {
 
+        }
+
+        // When Hidden
+        &.hide { margin-left: -180px;
+
+        }
     }
 
     // Footer

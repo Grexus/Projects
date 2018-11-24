@@ -1,6 +1,8 @@
 import { RouterConfiguration, Router } from 'aurelia-router';
 
 export class App {
+
+  showSidebar: boolean = false;
   router: Router;
 
   configureRouter(config: RouterConfiguration, router: Router): void {
@@ -16,5 +18,9 @@ export class App {
       { route: ['decider'], name: 'decider', title: "D-Cider", moduleId: 'views/decider/decider' },
       { route: ['toDo-list'], name: 'toDo-list', title: "To-Do List", moduleId: 'views/todo-list/todo-list' },
     ]);
+  }
+
+  public toggleSidebar() {
+    this.showSidebar = !this.showSidebar;
   }
 }
