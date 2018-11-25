@@ -7,7 +7,7 @@ class App {
     configureRouter(config, router) {
         this.router = router;
         this.router.navigateToRoute;
-        config.title = 'Aurelia';
+        config.title = 'MG Projects';
         config.options.pushState = true;
         config.options.hashChange = true;
         config.options.root = '';

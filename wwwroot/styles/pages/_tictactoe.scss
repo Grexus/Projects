@@ -1,0 +1,7 @@
+// Tic Tac Toe
+.tic-tac-toe {
+    .player {
+        &.active { font-weight: 600; }
+        &.winner { background-color: goldenrod; }
+    }
+}

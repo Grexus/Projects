@@ -526,27 +526,49 @@ html *, html *:before, html *:after {
   height: 100%;
 }
 
-.app .header {
-  background-color: blueviolet;
-  height: 60px;
-  padding: 0 10px;
-}
-
-.app .header .user-details {
-  text-align: right;
-}
-
 .app .sidebar {
   background-color: grey;
   padding: 10px;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
   width: 200px;
   -webkit-transition: margin-left 0.2s ease-in-out;
   transition: margin-left 0.2s ease-in-out;
 }
 
 .app .sidebar.hide {
-  margin-left: -180px;
+  margin-left: -150px;
+}
+
+.app .header {
+  height: 80px;
+  padding: 0 40px;
+  position: relative;
+}
+
+.app .header::after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 80px);
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.app .header .user-details {
+  text-align: right;
+}
+
+.tic-tac-toe .player.active {
+  font-weight: 600;
+}
+
+.tic-tac-toe .player.winner {
+  background-color: goldenrod;
 }
 /*# sourceMappingURL=core.css.map */

@@ -76,7 +76,7 @@ using AureliaTest;
 #line hidden
                 EndContext();
                 BeginContext(180, 50, true);
-                WriteLiteral(" - Admin Portal</title>\r\n    <base href=\"/\">\r\n    ");
+                WriteLiteral(" - MG Projects</title>\r\n    <base href=\"/\">\r\n    ");
                 EndContext();
                 BeginContext(230, 76, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d20d46c1cf8f4aca99ffcf8b746e8ab5", async() => {

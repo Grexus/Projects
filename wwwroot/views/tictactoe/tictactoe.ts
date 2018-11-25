@@ -35,6 +35,7 @@ export class TicTacToe {
     }
 
     public markCell(row: number, cell: number) {
+
         if (this.ticTacToeGrid[row][cell].cellValue == 0 && this.gameActive) {
             this.ticTacToeGrid[row][cell].cellValue = this.activePlayer;
 
@@ -46,6 +47,6 @@ export class TicTacToe {
     private checkWinner() {}
 
     private toggleActivePlayer() {
-        this.activePlayer = this.activePlayer == 1 ? 2 : 1;
+        this.activePlayer = this.activePlayer == 1 ? -1 : 1;
     }
 }

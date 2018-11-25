@@ -1,30 +1,40 @@
 <template>
-	<div class="app column">
-		<div class="header row flex-end flex-middle">
-			<div class="user-details row">
-				<div class="column">
-					<span class="user-name">Matthew</span>
-					<span class="user-type">Admin</span>
+	<div class="app row">
+
+		<!-- Sidebar -->
+		<div class="sidebar column grow-xs-1 ${showSidebar ? '' : 'hide'}" click.trigger="toggleSidebar()">
+			<div class="brand row">
+				<div class="brand-logo">
+					<!-- Insert Logo Here -->
 				</div>
-				<div class="user-image">
-					<!-- Insert Image Here -->
+				<div class="brand-name">Projects</div>
+			</div>
+			<div class="nav-items column flex-grow">
+				<div class="nav-item ${nav.isActive ? 'active' : ''}" repeat.for="nav of router.routes" click.delegate="router.navigateToRoute(nav.name)">
+					<span class="nav-item-title">${nav.title}</span>
 				</div>
 			</div>
 		</div>
-		<div class="row grow-xs-1 col">
-			<div class="sidebar column grow-xs-1 ${showSidebar ? 'show' : 'hide'}" click.trigger="toggleSidebar()">
-				<div class="brand row">
-					<div class="brand-logo">
-						<!-- Insert Logo Here -->
+
+
+
+		<!-- App Content -->
+		<div class="column grow-xs-1 col">
+
+			<!-- App Header -->
+			<div class="header row flex-end flex-middle">
+				<div class="user-details row">
+					<div class="column">
+						<span class="user-name">Matthew</span>
+						<span class="user-type">Admin</span>
 					</div>
-					<div class="brand-name">Projects</div>
-				</div>
-				<div class="nav-items column flex-grow">
-					<div class="nav-item ${nav.isActive ? 'active' : ''}" repeat.for="nav of router.routes" click.delegate="router.navigateToRoute(nav.name)">
-						<span class="nav-item-title">${nav.title}</span>
+					<div class="user-image">
+						<!-- Insert Image Here -->
 					</div>
 				</div>
 			</div>
+
+			<!-- Page -->
 			<router-view class="column flex-grow"></router-view>
 		</div>
 	</div>

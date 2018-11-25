@@ -1,25 +1,25 @@
 <template>
-    <span>${projectName}</span>
-
-    <div class="row flex-between">
-        <div class="player-1 ${activePlayer == 1 ? 'active' : ''} ${player1.isWinner ? 'winner' : ''}">
-            <span contenteditable="true" textcontent.two-way="player1.playerName"></span>
-            <span>${player1.playerScore}</span>
-            <span if.bind="player1.isWinner">Winner</span>
+    <div class="tic-tac-toe column flex-grow">
+        <span>${projectName}</span>
+    
+        <div class="player-information row flex-between">
+            <div class="player column ${activePlayer == 1 ? 'active' : ''} ${player1.isWinner ? 'winner' : ''}">
+                <span contenteditable="true" textcontent.two-way="player1.playerName"></span>
+                <span>Score: ${player1.playerScore}</span>
+            </div>
+            <div class="player column ${activePlayer == -1 ? 'active' : ''} ${player2.isWinner ? 'winner' : ''}">
+                <span contenteditable="true" textcontent.two-way="player2.playerName"></span>
+                <span>Score: ${player2.playerScore}</span>
+            </div>
         </div>
-        <div class="player-2 ${activePlayer == 2 ? 'active' : ''} ${player2.isWinner ? 'winner' : ''}">
-            <span contenteditable="true" textcontent.two-way="player2.playerName"></span>
-            <span>${player2.playerScore}</span>
-            <span if.bind="player2.isWinner">Winner</span>
-        </div>
-    </div>
-
-    <div class="grid column">
-        <div class="grid-row row flex-center flex-middle" repeat.for="row of ticTacToeGrid">
-            <div class="cell col-4" repeat.for="cell of row" click.delegate="markCell($parent.$index, $index)">
-                <div if.bind="ticTacToeGrid[$parent.$index][$index].cellValue === 0">Click Here</div>
-                <div class="marked-x" if.bind="ticTacToeGrid[$parent.$index][$index].cellValue === 1">X</div>
-                <div class="marked-o" if.bind="ticTacToeGrid[$parent.$index][$index].cellValue === 2">O</div>
+    
+        <div class="grid column">
+            <div class="grid-row row flex-center flex-middle" repeat.for="row of ticTacToeGrid">
+                <div class="cell col-4" repeat.for="cell of row" click.delegate="markCell($parent.$index, $index)">
+                    <div if.bind="ticTacToeGrid[$parent.$index][$index].cellValue === 0">Click Here</div>
+                    <div class="marked-x" if.bind="ticTacToeGrid[$parent.$index][$index].cellValue === 1">X</div>
+                    <div class="marked-o" if.bind="ticTacToeGrid[$parent.$index][$index].cellValue === -1">O</div>
+                </div>
             </div>
         </div>
     </div>

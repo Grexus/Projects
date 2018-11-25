@@ -30,7 +30,7 @@ class TicTacToe {
     }
     checkWinner() { }
     toggleActivePlayer() {
-        this.activePlayer = this.activePlayer == 1 ? 2 : 1;
+        this.activePlayer = this.activePlayer == 1 ? -1 : 1;
     }
 }
 exports.TicTacToe = TicTacToe;
