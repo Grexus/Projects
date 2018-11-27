@@ -4,10 +4,22 @@
     .sidebar { background-color: grey; padding: 10px; box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); width: 200px; 
         transition: margin-left 0.2s ease-in-out;
 
-        // When Hidden
-        &.hide { margin-left: -150px;
+        // Nav Items
+        .nav-items {
 
+            // Nav Item
+            .nav-item {
+
+                // Nav Item Text
+                .nav-item-text {}
+
+                // When Active
+                &.active {}
+            }
         }
+
+        // When Hidden
+        &.hide { margin-left: -150px; }
     }
     
 

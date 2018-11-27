@@ -11,7 +11,7 @@
 			</div>
 			<div class="nav-items column flex-grow">
 				<div class="nav-item ${nav.isActive ? 'active' : ''}" repeat.for="nav of router.routes" click.delegate="router.navigateToRoute(nav.name)">
-					<span class="nav-item-title">${nav.title}</span>
+					<span class="nav-item-text">${nav.title}</span>
 				</div>
 			</div>
 		</div>
